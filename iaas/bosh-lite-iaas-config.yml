@@ -1,0 +1,33 @@
+---
+iaas:
+  stemcells:
+    ubuntu-xenial: &a9s-stemcell-default
+      os: ubuntu-xenial
+      alias: ubuntu-xenial
+      version: 621.76
+      url: https://bosh.io/stemcells/bosh-warden-boshlite-ubuntu-xenial-go_agent#v621.76
+      sha1: e199474b6a0a25c6c59dd1fccd5e4642155851ca
+    default: *a9s-stemcell-default
+
+  consul:
+    stemcell: *a9s-stemcell-default
+    consul_ips:
+    - 10.244.5.15
+    - 10.244.6.15
+    - 10.244.7.15
+    dnsmasq_ips:
+    - 10.244.5.16
+    - 10.244.6.16
+    - 10.244.7.16
+    join_ip: 10.244.5.15
+    domain: consul
+    dnsmasq:
+      upstream_nameservers:
+      - 8.8.8.8
+      - 8.8.4.4
+
+  postgresql_service:
+    network: dynamic
+    stemcells:
+      service: *a9s-stemcell-default
+      plans: *a9s-stemcell-default
