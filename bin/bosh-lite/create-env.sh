@@ -9,6 +9,8 @@ back_dir() {
   popd
 }
 
+sudo ip route del 10.244.0.0/16 via 192.168.50.6
+
 current=$(pwd)
 
 pushd /home/heitor/workspace/lib/bosh-lite
