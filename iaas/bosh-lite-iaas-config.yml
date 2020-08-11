@@ -31,3 +31,11 @@ iaas:
     stemcells:
       service: *a9s-stemcell-default
       plans: *a9s-stemcell-default
+
+  a9s_pg:
+    stemcell: *a9s-stemcell-default
+    max_connections: 1024
+    guid: 177490d1-76d0-486f-bd00-78517770f3ef
+    graphite_endpoints:
+      #- 78.109.59.49:2003
+    metrics_prefix: a9s-pg-boshlite
