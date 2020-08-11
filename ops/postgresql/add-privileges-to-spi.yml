@@ -1,0 +1,11 @@
+# postgresql-spi.service_instance.privileges.permitted
+- type: replace
+  path: /instance_groups/name=spi/jobs/name=postgresql-spi/properties/postgresql-spi/service_instance?
+  value:
+    privileges:
+      default:
+      - CREATEROLE
+      - CREATEDB
+      permitted:
+      - CREATEROLE
+      - CREATEDB
